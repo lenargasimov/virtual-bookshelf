@@ -44,6 +44,5 @@ def add():
     return render_template("add.html")
 
 
-@app.route("/edit", methods=["GET", "POST"])
 if __name__ == "__main__":
     app.run(debug=True)
