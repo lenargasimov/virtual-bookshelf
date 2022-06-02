@@ -21,6 +21,13 @@ class Book(db.Model):
 db.create_all()
 
 
+@app.route('/')
+def home():
+    # Read all records
+    all_books = db.session.query(Book).all()
+    return render_template("index.html", books=all_books)
+
+
 @app.route("/add", methods=["GET", "POST"])
 def add():
     if request.method == "POST":
